@@ -15,8 +15,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'guard', '~> 2.6'
   s.add_dependency 'guard-compat', '~> 1.1'
   s.add_dependency "jekyll"
+  s.add_dependency "nenv", '~> 0.1'
 
-  s.add_development_dependency 'rake'
+  s.add_development_dependency 'bundler'
 
   s.files        = `git ls-files`.split("\n")
   s.require_paths = ['lib']
