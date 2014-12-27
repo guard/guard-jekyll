@@ -5,7 +5,7 @@ require 'jekyll'
 module Guard
   class Jekyll < Plugin
     def start
-      UI.info 'Guard::Jekyll is watching for file changes'
+      Compat::UI.info 'Guard::Jekyll is watching for file changes'
       rebuild
     end
 
@@ -22,14 +22,14 @@ module Guard
     # rebuilds the entire jekyll site
     #
     def rebuild
-      UI.info 'Guard::Jekyll regenerating'
+      Compat::UI.info 'Guard::Jekyll regenerating'
 
       site = ::Jekyll::Site.new(::Jekyll.configuration(options))
       site.process
 
-      UI.info 'Guard::Jekyll done.'
+      Compat::UI.info 'Guard::Jekyll done.'
     rescue Exception => e
-      UI.error "Guard::Jekyll failed: #{e}"
+      Compat::UI.error "Guard::Jekyll failed: #{e}"
       throw :task_has_failed
     end
   end
